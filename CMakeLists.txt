@@ -6,10 +6,11 @@ cmake_minimum_required(VERSION 3.20)
 
 project("openbabel-playground")
 
-find_package(OpenBabel3 REQUIRED)
+find_package(OpenBabel3 3.1.0 EXACT REQUIRED)
 
 SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static")
 
+# this line is needed
 target_include_directories(openbabel INTERFACE ${OpenBabel3_INCLUDE_DIRS})
 
 add_executable(${PROJECT_NAME} 
